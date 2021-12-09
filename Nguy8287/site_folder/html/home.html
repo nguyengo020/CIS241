@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+* {
+	box-sizing: border-box;
+}
+
+.mySlides {
+	display: none;
+}
+
+img {
+	align: center;
+	width: 100%;
+	height: auto;
+	max-height: 550px;
+}
+
+
+.slideshow-container {
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
+}
+
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -22px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+}
+
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+	background-color: rgba(0,0,0,0.8);
+}
+
+.numbertext {
+	color: #ffffff;
+	font-size: 12px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 10;
+}
+
+.dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+	background-color: #717171;
+}
+
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+	from {opacity: .4} 
+	to {opacity: 1}
+}
+
+@keyframes fade {
+	from {opacity: .4} 
+	to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+	.prev, .next,.text {font-size: 11px}
+}
+
+.text {
+	margin: 20px 180px 20px;
+}
+</style>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<link rel="stylesheet" type="text/css" href="../css/mystyle.css"/>
+<title>Ngoc Nguyen - Home page</title>
+</head>
+<body>
+	<div class="topnav" id="myTopnav">
+		<a class="active" href="../html/home.html">Home</a>
+		<a href="../html/resume.html">Resume</a>
+		<a href="../html/interests.html">Interests</a>
+		<a href="../html/reflections.html">Reflections</a>
+		<a href="../html/guestbook.html">Guestbook</a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+			<i class="fa fa-bars"></i>
+		</a>
+	</div>
+	
+	<script src="myScript.js"></script>
+	</br>
+	<div class="slideshow-container">
+		<div class="mySlides fade">
+			<div class="numbertext">1 / 3</div>
+			<img src="../images/christmas.jpg" alt="Our family celebrating Christmas">
+		</div>
+
+		<div class="mySlides fade">
+			<div class="numbertext">2 / 3</div>
+			<img src="../images/dc.jpg" alt="Our family in Washington DC">
+		</div>
+
+		<div class="mySlides fade">
+			<div class="numbertext">3 / 3</div>
+			<img src="../images/new york.jpg" alt="Our family in New York">
+		</div>
+
+		<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+		<a class="next" onclick="plusSlides(1)">&#10095;</a>
+	</div>
+	<br>
+
+
+	<div style="text-align:center">
+		<span class="dot" onclick="currentSlide(1)"></span>
+		<span class="dot" onclick="currentSlide(2)"></span>
+		<span class="dot" onclick="currentSlide(3)"></span>
+	</div>
+	
+	<script>
+	var slideIndex = 1;
+	showSlides(slideIndex);
+
+	function plusSlides(n) {
+		showSlides(slideIndex += n);
+	}
+
+	function currentSlide(n) {
+		showSlides(slideIndex = n);
+	}
+
+	function showSlides(n) {
+		var i;
+		var slides = document.getElementsByClassName("mySlides");
+		var dots = document.getElementsByClassName("dot");
+		if (n > slides.length) {slideIndex = 1}    
+		if (n < 1) {slideIndex = slides.length}
+		for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";  
+		}
+		for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+		}
+		slides[slideIndex-1].style.display = "block";  
+		dots[slideIndex-1].className += " active";
+	}
+	</script>
+
+	<div class="text">
+	<p style="text-indent: 50px; line-height:2">
+	Hi everyone! My name is Ngoc Nguyen, but I usually go by An or Anne. This is my first year at college. I was born in Vietnam 
+	and just moved to America 4 years ago. My family ended up here at Lynnwood, Washington because one of my cousins used to study 
+	here at Edmonds College and he recommended us. It is one of the biggest changes that my family ever made in the whole life. The 
+	life here at United States is  way different than what life is like in Vietnam. But luckily that we are able to engage and integrate 
+	to the lifestyle here. 
+	</p>
+	
+	<p style="text-indent: 50px; line-height:2">
+	Let me tell you the story of how I end up here studying about web development. One day, I received an email from the school 
+	district that offered junior students an opportunity to apply to work at T-Mobile. On the last day of the due date, I felt 
+	bored and had nothing to do. So, I just took out my computer and quickly write out a resume to submit. My thought at that time 
+	is that it is just for fun and I did not expect to get it since I have no experience at all and little knowledge about technology. 
+	After one month passed by, I finally got an email that said congratulations. At that time, I was suprised with what I see and 
+	immediately accept the offer from T-Mobile because it is one of the greatest opportunity that everyone wants to have. I am a person 
+	that hates to decide and choose what my life is going to be in future. I only care what is currently happen to my life right now. So, 
+	I just stick with it until now. 
+	</p>
+	
+	<p style="text-indent: 50px; line-height:2">
+	Family is really important to me. My mom and dad divorced and are separated when I was young. So, I usually stay at home with my mom 
+	whenever I have spare time outside of school and work. I have three older brothers. Two of them live here with me and my mom. Only one 
+	of them is living out of state in Minnesota. Whenever there is a national holiday, we mostly gather back together either in Minnesota or 
+	Washington and celebrate the holiday. Or sometimes, we will meet in a certain state and travel together. I really appreciated what I have
+	now because I believe that not all people get what they want in life. 
+	</p>
+	</div>
+</body>
+</html>
